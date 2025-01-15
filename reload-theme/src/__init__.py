@@ -7,7 +7,7 @@ def reload_theme(context):
         menu_idname="USERPREF_MT_interface_theme_presets"
     )
 
-class ReloadThemeOperator(bpy.types.Operator):
+class SCRIPT_OT_reload_theme(bpy.types.Operator):
     """Reloads the current theme"""
     bl_idname = "script.reload_theme"
     bl_label = "Reload Theme"
@@ -16,10 +16,10 @@ class ReloadThemeOperator(bpy.types.Operator):
         return reload_theme(context)
 
 def register():
-    bpy.utils.register_class(ReloadThemeOperator)
+    bpy.utils.register_class(SCRIPT_OT_reload_theme)
 
 def unregister():
-    bpy.utils.unregister_class(ReloadThemeOperator)
+    bpy.utils.unregister_class(SCRIPT_OT_reload_theme)
 
 # if running directly from the blender editor
 if __name__ == "__main__":
