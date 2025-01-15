@@ -1,7 +1,7 @@
 import bpy
 
 def reload_theme(context):
-    current_theme_filepath = bpy.context.preferences.themes['Default'].filepath
+    current_theme_filepath = context.preferences.themes['Default'].filepath
     return bpy.ops.script.execute_preset(
         filepath=current_theme_filepath,
         menu_idname="USERPREF_MT_interface_theme_presets"
