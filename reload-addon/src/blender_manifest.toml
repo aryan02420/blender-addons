@@ -1,0 +1,14 @@
+schema_version = "1.0.0"
+
+id = "reload_addon"
+version = "0.1.0"
+name = "Reload Addon"
+tagline = "Reloads a specified local addon from the disk"
+maintainer = "aryan02420 <aryan02420@gmail.com>"
+type = "add-on"
+website = "https://github.com/aryan02420/blender-addons"
+tags = ["User Interface"]
+blender_version_min = "4.2.0"
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
