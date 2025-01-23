@@ -11,17 +11,17 @@ current_dir := $(realpath .)
 
 all: output/reload-theme.zip output/icon.png
 
-output/reload-theme.zip: ./src/__init__.py ./src/blender_manifest.toml
+output/reload-theme.zip: ./src/
 	mkdir -p output
 	@echo -e "\033[1;34mMAKE:\033[0m Validating extension..."
-	$(blender) --command extension validate $(current_dir)/src
+	$(blender) --command extension validate $(current_dir)/$^
 	@echo -e "\033[1;34mMAKE:\033[0m Building extension..."
-	$(blender) --command extension build --source-dir $(current_dir)/src --output-filepath $(current_dir)/output/reload-theme.zip
+	$(blender) --command extension build --source-dir $(current_dir)/$^ --output-filepath $(current_dir)/$@
 
 output/icon.png: ./assets/icon.svg
 	mkdir -p output
 	@echo -e "\033[1;34mMAKE:\033[0m Generating icon..."
-	magick -density 960 ./assets/icon.svg -resize 256x256 ./output/icon.png
+	magick -density 960 $^ -resize 256x256 ./$@
 
 clean:
 	rm -rf output/*
