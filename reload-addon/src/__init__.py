@@ -28,7 +28,7 @@ class ReloadAddonPreferences(bpy.types.AddonPreferences):
 class SCRIPT_OT_reload_addon(bpy.types.Operator):
     """Reloads a specified local addon from the disk"""
     bl_idname = "script.reload_addon"
-    bl_label = "Reload Addon UPDATED!!!!"
+    bl_label = "Reload Addon"
 
     def execute(self, context):
         return reload_addon(context)
