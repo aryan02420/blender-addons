@@ -9,8 +9,8 @@ blender := blender
 
 current_dir := $(realpath .)
 
-ADDON_NAME := $(basename $(notdir $(current_dir)))
-VERSION := $(shell cat ./src/blender_manifest.toml | grep -oP '^version = \"(.*)\"' | grep -oP "\d+.\d+.\d+")
+ADDON_NAME := $(shell cat ./src/blender_manifest.toml | grep -oP '(?<=^id = \").*(?=\")')
+VERSION := $(shell cat ./src/blender_manifest.toml | grep -oP '(?<=^version = \").*(?=\")')
 
 all: output/$(ADDON_NAME)-$(VERSION).zip output/icon.png
 
