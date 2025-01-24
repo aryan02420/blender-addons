@@ -11,11 +11,9 @@ current_dir := $(realpath .)
 
 SUBPROJECT_DIRS := $(shell find ./*/ -type f -name 'Makefile' -exec dirname {} \;)
 
-.PHONY: subprojects
+all: repository/index.json
 
-all: subprojects repository/index.json
-
-subprojects:
+./*/output/*.zip:
 	for dir in $(SUBPROJECT_DIRS); do \
 		$(MAKE) -C $$dir; \
 	done
@@ -29,3 +27,8 @@ repository/index.json: ./repository/*.zip
 
 clean:
 	rm -rf repository/*
+
+clean-all: clean
+	for dir in $(SUBPROJECT_DIRS); do \
+		$(MAKE) -C $$dir clean; \
+	done
