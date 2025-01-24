@@ -1,7 +1,7 @@
 import bpy
 
 def reload_addon(context):
-    addon_preferences = bpy.context.preferences.addons[__package__].preferences
+    addon_preferences = context.preferences.addons[__package__].preferences
     addon_filepath = addon_preferences.addon_filepath.strip()
     if addon_filepath:
         return bpy.ops.extensions.package_install_files(
