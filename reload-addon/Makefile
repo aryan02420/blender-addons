@@ -13,8 +13,6 @@ ADDON_NAME := $(shell cat ./src/blender_manifest.toml | grep -oP '(?<=^id = \").
 VERSION := $(shell cat ./src/blender_manifest.toml | grep -oP '(?<=^version = \").*(?=\")')
 
 all: output/$(ADDON_NAME)-$(VERSION).zip output/icon.png
-	@echo ADDON_NAME=$(ADDON_NAME)
-	@echo VERSION=$(VERSION)
 
 output/$(ADDON_NAME)-$(VERSION).zip: ./src
 	mkdir -p output

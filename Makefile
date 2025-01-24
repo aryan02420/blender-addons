@@ -9,7 +9,16 @@ blender := blender
 
 current_dir := $(realpath .)
 
-all: repository/*.zip repository/index.json
+SUBPROJECT_DIRS := $(shell find ./*/ -type f -name 'Makefile' -exec dirname {} \;)
+
+.PHONY: subprojects
+
+all: subprojects repository/index.json
+
+subprojects:
+	for dir in $(SUBPROJECT_DIRS); do \
+		$(MAKE) -C $$dir; \
+	done
 
 repository/*.zip: ./*/output/*.zip
 	mkdir -p repository
