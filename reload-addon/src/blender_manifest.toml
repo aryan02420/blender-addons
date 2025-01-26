@@ -1,7 +1,7 @@
 schema_version = "1.0.0"
 
 id = "reload_addon"
-version = "0.1.1"
+version = "0.1.2"
 name = "Reload Addon"
 tagline = "Reloads a specified local addon from the disk"
 maintainer = "aryan02420 <aryan02420@gmail.com>"

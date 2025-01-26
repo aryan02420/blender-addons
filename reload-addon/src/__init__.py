@@ -23,7 +23,11 @@ class ReloadAddonPreferences(bpy.types.AddonPreferences):
     def draw(self, context):
         layout = self.layout
         row = layout.row()
-        row.prop(self, "addon_filepath", text="Path to the local addon (.zip, .py)")
+        row.prop(self, "addon_filepath", text="Addon path (.zip, .py)")
+        layout.label(
+            text="The filepath provided must be a valid blender addon. Executing \"Reload Addon\" will reinstall the addon from the above provided path.",
+            icon='INFO'
+        )
 
 class SCRIPT_OT_reload_addon(bpy.types.Operator):
     """Reloads a specified local addon from the disk"""
