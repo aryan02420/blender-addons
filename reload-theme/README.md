@@ -1,6 +1,7 @@
 # Reload Theme
 
-[Download](https://extensions.blender.org/add-ons/reload-theme/)
+> [!NOTE]
+> This addon is can be installed from the [self hosted extensions registry](../README.md#installation).
 
 This add-on adds a new operator for reloading the current theme. You can access it from the Search Menu (<kbd>F3</kbd> OR <kbd>Spacebar</kbd>) and searching for "Reload Theme".
 
