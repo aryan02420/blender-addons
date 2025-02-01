@@ -18,7 +18,7 @@ Some of the addons here are available on the official [Blender extensions regist
 
 ## Available Addons
 
-### <img src="./reload-addon/assets/icon.svg" height="1em" /> Reload Addon
+### <img src="./reload-addon/assets/icon.svg" height="20em" /> Reload Addon
 
 This add-on adds a new operator for reloading a local addon from the disk. You can access it from the Search Menu (<kbd>F3</kbd> OR <kbd>Spacebar</kbd>) and searching for "Reload Addon".
 
@@ -26,7 +26,7 @@ This add-on adds a new operator for reloading a local addon from the disk. You c
 
 ![Reload Addon Operator](./reload-addon/assets/preview0.png)
 
-### <img src="./reload-theme/assets/icon.svg" height="1em" /> Reload Theme
+### <img src="./reload-theme/assets/icon.svg" height="20em" /> Reload Theme
 
 This add-on adds a new operator for reloading the current theme. You can access it from the Search Menu (<kbd>F3</kbd> OR <kbd>Spacebar</kbd>) and searching for "Reload Theme".
 
