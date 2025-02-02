@@ -1,13 +1,18 @@
 import bpy
 
-def reload_addon(context):
+def reload_addon(operator, context):
     addon_preferences = context.preferences.addons[__package__].preferences
     addon_filepath = addon_preferences.addon_filepath.strip()
     if addon_filepath:
-        return bpy.ops.extensions.package_install_files(
+        ret = bpy.ops.extensions.package_install_files(
+            'EXEC_DEFAULT',
             filepath=addon_filepath,
             repo='user_default'
         )
+        if ret == {'FINISHED'}:
+            operator.report({'INFO'}, f'Reinstalled "{bpy.path.display_name_from_filepath(addon_filepath)}"')
+            return {'FINISHED'}
+
     return {'CANCELLED'}
 
 class ReloadAddonPreferences(bpy.types.AddonPreferences):
@@ -35,7 +40,7 @@ class SCRIPT_OT_reload_addon(bpy.types.Operator):
     bl_label = "Reload Addon"
 
     def execute(self, context):
-        return reload_addon(context)
+        return reload_addon(self, context)
 
 def register():
     bpy.utils.register_class(SCRIPT_OT_reload_addon)
